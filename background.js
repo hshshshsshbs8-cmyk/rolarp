@@ -1,0 +1,1 @@
+chrome.runtime.onInstalled.addListener(()=>chrome.storage.local.get('rolarp',x=>{if(!x.rolarp)chrome.storage.local.set({rolarp:{robux:2500,username:'RoLARP_User',displayName:'RoLARP User',premium:true,verified:false,followers:1250,inventory:[],equipped:[]}})}));
