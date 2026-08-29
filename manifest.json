@@ -1,10 +1,15 @@
 {
   "manifest_version": 3,
   "name": "RoLARP",
-  "version": "1.0.0",
-  "description": "Local-only Roblox UI roleplay and profile simulator.",
-  "permissions": ["storage", "activeTab"],
-  "action": {"default_popup": "popup.html"},
-  "content_scripts": [{"matches": ["https://www.roblox.com/*"], "js": ["content.js"], "run_at": "document_idle"}],
-  "background": {"service_worker": "background.js"}
+  "version": "2.0.0",
+  "description": "A local Roblox UI roleplay and prototyping toolkit. Simulated data never changes server-side ownership or account data.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://www.roblox.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "RoLARP" },
+  "content_scripts": [{
+    "matches": ["https://www.roblox.com/*"],
+    "js": ["utils.js", "content.js", "modules/profile.js", "modules/catalog.js", "modules/catalog-owned.js", "modules/avatar.js", "modules/friend.js", "modules/server.js", "modules/settings-page.js", "modules/trade.js", "modules/home-friends.js", "modules/lib/server-regions.js"],
+    "run_at": "document_idle"
+  }]
 }

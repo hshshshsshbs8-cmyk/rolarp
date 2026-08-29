@@ -1,0 +1,1 @@
+(() => { window.RoLARPHomeFriends={render(list,root){if(!root)return;root.replaceChildren(...list.map(f=>{const el=document.createElement('span');el.textContent=f.name||'Friend';el.className='rolarp-friend-chip';return el;}));}}; })();

@@ -1,0 +1,1 @@
+(() => { window.RoLARPRegionData={regions:[{id:'use',name:'US East'},{id:'usw',name:'US West'},{id:'eur',name:'Europe'},{id:'ap',name:'Asia Pacific'},{id:'br',name:'Brazil'},{id:'au',name:'Australia'}],label(id){return this.regions.find(r=>r.id===id)?.name||'Unknown';}}; })();
