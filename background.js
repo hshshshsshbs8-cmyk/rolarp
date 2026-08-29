@@ -1,1 +1,2 @@
-chrome.runtime.onInstalled.addListener(()=>chrome.storage.local.get('rolarp',x=>{if(!x.rolarp)chrome.storage.local.set({rolarp:{robux:2500,username:'RoLARP_User',displayName:'RoLARP User',premium:true,verified:false,followers:1250,inventory:[],equipped:[]}})}));
+chrome.runtime.onInstalled.addListener(()=>chrome.storage.local.get('rolarpState').then(({rolarpState})=>{if(!rolarpState)chrome.storage.local.set({rolarpState:{enabled:true,robux:999999,username:'RoLARP_User',displayName:'RoLARP',followers:12345,premium:true,verified:true,inventory:[],equipped:[],theme:'midnight'}});}));
+chrome.runtime.onMessage.addListener((msg,_,sendResponse)=>{if(msg?.type==='rolarp:get')chrome.storage.local.get('rolarpState').then(x=>sendResponse(x.rolarpState));return true;});
